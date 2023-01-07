@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(240, 109, 109);
+            /* background-image: url(main/mainba.png); */
+        }
+
+        #mxp {
+            margin: auto;
+            /* background-color: red; */
+            background-image: url(main/one.png);
+            width: 1024px;
+            height: 853px;
+            border-radius: 40%;
+            margin-top: 60px;
+            border: #fff solid 5px;
+        }
+
+        #djs {
+            background-image: url(pic/气泡框3.png);
+            float: right;
+            height: 120px;
+            width: 230px;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            padding-top: 76px;
+            padding-left: 70px;
+            color: rgb(255, 255, 255);
+            text-shadow: 0px 0px 15px #00FFFF, 0px 0px 15px #00FFFF, 0px 0px 15px #00FFFF;
+            font-size: 20px;
+            font-family: "楷体";
+
+        }
+
+        #qpkimg {
+            width: 259px;
+            height: 164px;
+        }
+
+        li {
+            width: 92px;
+            height: 92px;
+            list-style-type: none;
+            /* background-color: blueviolet; */
+            position: absolute;
+            list-style: none;
+        }
+
+        #qxhz {
+            position: relative;
+            padding-bottom: 1px;
+        }
+
+        #a {
+            top: 220px;
+            right: 184px;
+        }
+
+        #b {
+            top: 220px;
+            right: 92px;
+        }
+
+        #c {
+            top: 220px;
+            right: 0px;
+        }
+
+        #d {
+            top: 312px;
+            right: 45px;
+        }
+
+        #e {
+            top: 312px;
+            right: 137px;
+        }
+
+        #f {
+            top: 404px;
+            right: 92px;
+        }
+
+        video {
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+    <script>
+
+        function countDown(time) {
+            var nowTime = +new Date();
+            var inputTime = +new Date(time);
+            var times = (inputTime - nowTime) / 1000;
+            var d = parseInt(times / 60 / 60 / 24);//天
+            d = d < 10 ? '0' + d : d;
+            var h = parseInt(times / 60 / 60 % 24);//时
+            h = h < 10 ? '0' + h : h;
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            return d + '天' + h + '时' + m + '分' + s + '秒';
+        }
+        var date = countDown('2023-6-7 09:00:00');
+        console.log(date);
+    </script>
+</head>
+
+<body>
+    <div id="djs">现在时间：<br>
+        高考倒计时：</div>
+    <script>
+        var div = document.querySelector('div');
+        div.innerHTML = '距离高考还有<br>' + date;
+    </script>
+    <ul id="qxhz">
+        <li id="a"><img src="pic/喜2.png" alt=""></li>
+        <li id="b"><img src="pic/思.png" alt=""></li>
+        <li id="c"><img src="pic/哀.png" alt=""></li>
+        <li id="d"><img src="pic/怒.png" alt=""></li>
+        <li id="e"><img src="pic/惧.png" alt=""></li>
+        <li id="f"><img src="pic/喜.png" alt=""></li>
+    </ul>
+    <div id="mxp">
+    </div>
+    <audio src="#" controls autoplay></audio>
+    <div id="dv1">
+        <video src="video/1.mp4" controls></video>
+        <video src="video/2.mp4" controls></video>
+        <video src="video/3.mp4" controls></video>
+    </div>
+    <div id="dv2" style="display: none;">
+        <video src="video/4.mp4" controls></video>
+    </div>
+    <script>
+        var a = document.getElementById('a');
+        var b = document.getElementById('b');
+        var c = document.getElementById('c');
+        var d = document.getElementById('d');
+        var f = document.getElementById('f');
+        var video = document.querySelector('video');
+        var dv1 = document.getElementById('dv1');
+        var dv2 = document.getElementById('dv2');
+        var mic = document.querySelector('audio');
+        var mxp = document.getElementById('mxp');
+        var body = document.querySelector('body');
+        f.onclick = function () {
+            mxp.style.backgroundImage = 'url(main/mainmxp.png)';
+            mxp.style.width = '795px';
+            mxp.style.height = '640px';
+            mic.src = 'main/xxy2.mp4';
+            mxp.style.border = '0px solid #fff';
+            body.style.backgroundImage = 'url(main/mainba.png)';
+            // video.style.display = 'none';
+            dv1.style.display = 'none';
+            dv2.style.display = 'block';
+
+        }
+        c.onclick = function () {
+            mxp.style.display = 'block';
+            mxp.style.backgroundImage = 'url(sad/sadmxp4.png)';
+            mxp.style.width = '1024px';
+            mxp.style.height = '724px';
+            mxp.style.borderRadius = '0% 40% 10%';
+            mxp.style.border = '5px solid #fff';
+            body.style.backgroundImage = 'url(sad/sadba.png)';
+            mic.src = 'sad/sadmu.mp4';
+            dv1.style.display = 'none';
+            dv2.style.display = 'none';
+
+        }
+        b.onclick = function () {
+            mxp.style.display = 'block';
+            mxp.style.backgroundImage = 'url(miss/missmxp2.png)';
+            mxp.style.width = '1024px';
+            mxp.style.height = '640px';
+            mxp.style.border = '5px solid #fff';
+            mxp.style.borderRadius = 0;
+            body.style.backgroundImage = 'url(miss/missba.jpg)';
+            dv1.style.display = 'none';
+            dv2.style.display = 'none';
+            mic.src = 'miss/missmic.m4a';
+        }
+        a.onclick = function () {
+            mxp.style.display = 'block';
+            mxp.style.backgroundImage = 'url(happy/happymxp3.png)';
+            body.style.backgroundImage = 'url(happy/happyba.png)';
+            mxp.style.width = '1024px';
+            mxp.style.height = '640px';
+            mxp.style.border = '5px solid #fff';
+            mxp.style.borderRadius = '10%';
+            dv1.style.display = 'none';
+            dv2.style.display = 'none';
+            mic.src = 'happy/happymic.mp4';
+        }
+        d.onclick = function () {
+            mxp.style.display = 'block';
+            mxp.style.backgroundImage = 'url(anger/angermxp.png)';
+            body.style.backgroundImage = 'url(anger/angerba.png)';
+            mxp.style.width = '1024px';
+            mxp.style.height = '1024px';
+            mxp.style.borderRadius = '10%';
+            mxp.style.border = '5px solid #fff';
+            dv1.style.display = 'none';
+            mxp.style.borderStyle = 'botted';
+            dv2.style.display = 'none';
+            mic.src = '#';
+        }
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
