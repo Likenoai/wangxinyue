@@ -55,7 +55,6 @@
             width: 92px;
             height: 92px;
             list-style-type: none;
-            /* background-color: blueviolet; */
             position: absolute;
             list-style: none;
         }
@@ -139,14 +138,14 @@
     <div id="mxp">
     </div>
     <audio src="#" controls autoplay></audio>
-    <div id="dv1">
+<!--     <div id="dv1">
         <video src="video/1.mp4" controls></video>
         <video src="video/2.mp4" controls></video>
         <video src="video/3.mp4" controls></video>
     </div>
     <div id="dv2" style="display: none;">
         <video src="video/4.mp4" controls></video>
-    </div>
+    </div> -->
     <script>
         var a = document.getElementById('a');
         var b = document.getElementById('b');
@@ -154,8 +153,8 @@
         var d = document.getElementById('d');
         var f = document.getElementById('f');
         var video = document.querySelector('video');
-        var dv1 = document.getElementById('dv1');
-        var dv2 = document.getElementById('dv2');
+//         var dv1 = document.getElementById('dv1');
+//         var dv2 = document.getElementById('dv2');
         var mic = document.querySelector('audio');
         var mxp = document.getElementById('mxp');
         var body = document.querySelector('body');
@@ -167,8 +166,8 @@
             mxp.style.border = '0px solid #fff';
             body.style.backgroundImage = 'url(main/mainba.png)';
             // video.style.display = 'none';
-            dv1.style.display = 'none';
-            dv2.style.display = 'block';
+//             dv1.style.display = 'none';
+//             dv2.style.display = 'block';
 
         }
         c.onclick = function () {
@@ -180,8 +179,8 @@
             mxp.style.border = '5px solid #fff';
             body.style.backgroundImage = 'url(sad/sadba.png)';
             mic.src = 'sad/sadmu.mp4';
-            dv1.style.display = 'none';
-            dv2.style.display = 'none';
+//             dv1.style.display = 'none';
+//             dv2.style.display = 'none';
 
         }
         b.onclick = function () {
@@ -192,8 +191,8 @@
             mxp.style.border = '5px solid #fff';
             mxp.style.borderRadius = 0;
             body.style.backgroundImage = 'url(miss/missba.jpg)';
-            dv1.style.display = 'none';
-            dv2.style.display = 'none';
+//             dv1.style.display = 'none';
+//             dv2.style.display = 'none';
             mic.src = 'miss/missmic.m4a';
         }
         a.onclick = function () {
@@ -204,8 +203,8 @@
             mxp.style.height = '640px';
             mxp.style.border = '5px solid #fff';
             mxp.style.borderRadius = '10%';
-            dv1.style.display = 'none';
-            dv2.style.display = 'none';
+//             dv1.style.display = 'none';
+//             dv2.style.display = 'none';
             mic.src = 'happy/happymic.mp4';
         }
         d.onclick = function () {
@@ -216,9 +215,9 @@
             mxp.style.height = '1024px';
             mxp.style.borderRadius = '10%';
             mxp.style.border = '5px solid #fff';
-            dv1.style.display = 'none';
+//             dv1.style.display = 'none';
             mxp.style.borderStyle = 'botted';
-            dv2.style.display = 'none';
+//             dv2.style.display = 'none';
             mic.src = '#';
         }
     </script>
