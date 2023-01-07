@@ -137,25 +137,18 @@
     </ul>
     <div id="mxp">
     </div>
-    <audio src="#" controls autoplay></audio>
-<!--     <div id="dv1">
-        <video src="video/1.mp4" controls></video>
-        <video src="video/2.mp4" controls></video>
-        <video src="video/3.mp4" controls></video>
-    </div>
-    <div id="dv2" style="display: none;">
-        <video src="video/4.mp4" controls></video>
-    </div> -->
+    <audio src="ly/ly1.mp3" controls autoplay id="mic1"></audio>
+    <audio src="ly/ly2.mp3" controls id="mic2"></audio>
+    <audio src="ly/ly3.mp3" controls id="mic3"></audio>
     <script>
         var a = document.getElementById('a');
         var b = document.getElementById('b');
         var c = document.getElementById('c');
         var d = document.getElementById('d');
         var f = document.getElementById('f');
-        var video = document.querySelector('video');
-//         var dv1 = document.getElementById('dv1');
-//         var dv2 = document.getElementById('dv2');
-        var mic = document.querySelector('audio');
+        var mic = document.getElementById('mic1');
+        var mic2 = document.getElementById('mic2');
+        var mic3 = document.getElementById('mic3');
         var mxp = document.getElementById('mxp');
         var body = document.querySelector('body');
         f.onclick = function () {
@@ -163,11 +156,11 @@
             mxp.style.width = '795px';
             mxp.style.height = '640px';
             mic.src = 'main/mainmic.mp3';
+            mic2.src = 'ly/lymain.mp3';
+            mic3.style.display = 'none';
             mxp.style.border = '0px solid #fff';
             body.style.backgroundImage = 'url(main/mainba.png)';
-            // video.style.display = 'none';
-//             dv1.style.display = 'none';
-//             dv2.style.display = 'block';
+    
 
         }
         c.onclick = function () {
@@ -179,8 +172,8 @@
             mxp.style.border = '5px solid #fff';
             body.style.backgroundImage = 'url(sad/sadba.png)';
             mic.src = 'sad/sadmu.mp4';
-//             dv1.style.display = 'none';
-//             dv2.style.display = 'none';
+            mic3.style.display = 'none';
+            mic2.src = 'ly/lysad.mp3';
 
         }
         b.onclick = function () {
@@ -191,9 +184,10 @@
             mxp.style.border = '5px solid #fff';
             mxp.style.borderRadius = 0;
             body.style.backgroundImage = 'url(miss/missba.jpg)';
-//             dv1.style.display = 'none';
-//             dv2.style.display = 'none';
             mic.src = 'miss/missmic.m4a';
+            mic3.style.display = 'none';
+            mic2.src = 'ly/lymain.mp3';
+            
         }
         a.onclick = function () {
             mxp.style.display = 'block';
@@ -203,9 +197,10 @@
             mxp.style.height = '640px';
             mxp.style.border = '5px solid #fff';
             mxp.style.borderRadius = '10%';
-//             dv1.style.display = 'none';
-//             dv2.style.display = 'none';
             mic.src = 'happy/happymic.mp4';
+            mic3.style.display = 'none';
+            mic2.src = 'ly/lymain.mp3';
+            
         }
         d.onclick = function () {
             mxp.style.display = 'block';
@@ -215,10 +210,11 @@
             mxp.style.height = '1024px';
             mxp.style.borderRadius = '10%';
             mxp.style.border = '5px solid #fff';
-//             dv1.style.display = 'none';
             mxp.style.borderStyle = 'botted';
-//             dv2.style.display = 'none';
             mic.src = '#';
+            mic3.style.display = 'none';
+            mic2.src = 'ly/lymain.mp3';
+            
         }
     </script>
 
